@@ -2,7 +2,11 @@ configure :development do
  set :show_exceptions, true
 end
 
+
 configure :production, :development do
+ 
+ set :protection, except: [:frame_options]
+
  db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
 
  ActiveRecord::Base.establish_connection(
