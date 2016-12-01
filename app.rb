@@ -4,6 +4,14 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require './environments'
 
+class Investment < ActiveRecord::Base
+  self.table_name = 'salesforce.investment__c'
+end
+
+get "/investments" do
+  @investments = Investment.all
+  erb :index
+end
 
 get "/" do
   erb :home
