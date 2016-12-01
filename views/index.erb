@@ -42,13 +42,15 @@
     data: data,
     responsive: false,
     options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
+      responsive: true,
+      maintainAspectRatio: true,
+      scales: {
+          yAxes: [{
+              ticks: {
+                  beginAtZero:true
+              }
+          }]
+      }
     }
   });
 </script>
