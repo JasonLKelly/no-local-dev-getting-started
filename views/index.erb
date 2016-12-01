@@ -1,18 +1,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js"></script>
 
-<script>
-  var inv = <%=  "#{@investments.to_json};" %>;
-  var ctx = "myChart";
 
-  var data = {
-    data: inv.map(function(i) {return i.total_budget__c;}),
-    labels: inv.map(function(i) {return i.name;})
-  }
-  var chartInstance = new Chart(ctx, {
-    type: 'bar',
-
-  });
-</script>
 
 <div class="container">
 
@@ -37,3 +25,16 @@
 
 
 </div>
+<script>
+  var inv = <%=  "#{@investments.to_json};" %>;
+  var ctx = document.getElementById("myChart");
+
+  var data = {
+    data: inv.map(function(i) {return i.total_budget__c;}),
+    labels: inv.map(function(i) {return i.name;})
+  }
+  var chartInstance = new Chart(ctx, {
+    type: 'bar',
+
+  });
+</script>
