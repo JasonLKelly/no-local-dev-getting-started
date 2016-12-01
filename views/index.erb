@@ -40,6 +40,15 @@
   var chartInstance = new Chart(ctx, {
     type: 'bar',
     data: data,
-    responsive: false
+    responsive: false,
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
   });
 </script>
