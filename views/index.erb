@@ -30,7 +30,11 @@
   var ctx = document.getElementById("myChart");
 
   var data = {
-    data: inv.map(function(i) {return i.total_budget__c;}),
+    datasets: [
+      {
+        label: "Investment",
+        data: inv.map(function(i) {return i.total_budget__c;}),
+      }],
     labels: inv.map(function(i) {return i.name;})
   }
   var chartInstance = new Chart(ctx, {
